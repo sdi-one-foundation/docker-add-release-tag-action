@@ -25,12 +25,15 @@ runs:
         aws-region: ${{ inputs.aws-region }}
 
     - name: Get the SHA_SHORT
+      shell: bash
       run: echo "GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
     - name: Get the VERSION
+      shell: bash
       run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
     - name: Push Release Tag
+      shell: bash
       run: |
         export MANIFEST=$(aws ecr batch-get-image --repository-name ${{ inputs.ecr-repository }} --image-ids imageTag=sha-${{ env.GITHUB_SHA_SHORT }} --query 'images[].imageManifest' --output text)
         aws ecr put-image --repository-name ${{ inputs.ecr-repository }} --image-tag ${{ env.VERSION }} --image-manifest "$MANIFEST"
