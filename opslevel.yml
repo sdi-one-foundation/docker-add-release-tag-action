@@ -6,7 +6,7 @@
   "provider": "github"
 "service":
   "aliases":
-  - "N/A"
+  - "docker-add-release-tag-action"
   "description": "A composite Github Action for our standard Docker release tagging
     workflow steps"
   "framework": "n/a"
@@ -15,5 +15,14 @@
   "name": "docker-add-release-tag-action"
   "owner": "sdi-one-foundation"
   "product": "foundation"
+  "tags":
+  - "key": "Name"
+    "value": "docker-add-release-tag-action"
+  - "key": "Team"
+    "value": "sdi-one-foundation"
+  - "key": "ServiceType"
+    "value": "other"
+  - "key": "Product"
+    "value": "foundation"
   "tier": "tier_3"
 "version": 1
